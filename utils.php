@@ -19,7 +19,12 @@ function getImageCaptions($captionsPath){
         $line = fgets($captionFile);
         array_push($captions,$line);
     }
+    $captions = array_diff($captions,array(''));
+    $allCaptions = array_values($captions);
 
-    return $captions;
+    return $allCaptions;
 }
+
+
+
 ?>
