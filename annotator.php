@@ -2,6 +2,12 @@
 session_start();
 $imagePath = "DIDEC/images";
 $captionsPath = "DIDEC/captions";
+$name = $_GET['inputName'];
+$outFileName = $name . time() . 'tsv';
+if(!isset($_SESSION['OutFileName'])){
+    $_SESSION['OutFileName'] = $outFileName;
+}
+
 ?>
 
 <?php include 'utils.php' ?>
@@ -29,10 +35,25 @@ $captionsPath = "DIDEC/captions";
         var captions = <?php echo json_encode(getImageCaptions($captionsPath)) ?>;
         var index = 0;
         var clickCount = 0;
+        var captionWithoutImage = "";
+        var captionWithImage = "";
+
+        function send_data(data) {
+            var xhttp = new XMLHttpRequest();
+            // Set POST method and ajax file path
+            xhttp.open("POST", "processor.php?q=write_data", true);
+
+            // Content-type
+            xhttp.setRequestHeader("Content-Type", "application/json");
+
+            // Send request with data
+            xhttp.send(JSON.stringify(data));
+        }
 
         function loadCaptionsAndImages() {
             clickCount++;
             if (clickCount == 2) {
+                var caption = captions[index];
                 document.getElementById("captionCardText").innerText = captions[index];
                 index++;
                 clickCount = 0;
@@ -43,8 +64,21 @@ $captionsPath = "DIDEC/captions";
                 document.getElementById('captionWithImage').style.display = 'none';
                 document.getElementById('captionImageCardText').innerText = captions[index];
                 document.getElementById('Image').src = 'DIDEC/images/' + filenames[index] + '.jpg'
+
+                captionWithImage = document.getElementById("inputAnnotate").value;
+                document.getElementById("inputAnnotate").value = "";
+                
+                //Store the entered annotations into a temp storage so that they don't get lost 
+                //in async calls
+                temp1 = captionWithoutImage;
+                temp2 = captionWithImage;
+
+                var data = {annotaions: temp1+ "," +temp2,caption: caption};
+                send_data(data);
             }
             if (clickCount == 1) {
+                captionWithoutImage = document.getElementById("inputAnnotate").value;
+                document.getElementById("inputAnnotate").value = "";
                 document.getElementById("captionOnly").style.display = 'none';
                 document.getElementById("captionWithImage").style.display = 'block';
             }
