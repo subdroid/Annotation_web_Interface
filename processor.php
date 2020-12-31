@@ -12,6 +12,7 @@ $q = $_REQUEST['q'];
 if($q != "" && $q == "write_data"){
     $outFile = fopen($outFileName,'a');
     $data = json_decode(file_get_contents("php://input"));
+    $_SESSION['index'] = $data->index;
     $line = $data->annotaions ."\t".  $data->caption;
 
     fwrite($outFile,$line);

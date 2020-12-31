@@ -33,7 +33,9 @@ if(!isset($_SESSION['OutFileName'])){
     <script>
         var filenames = <?php echo json_encode(getImagesList($imagePath)) ?>;
         var captions = <?php echo json_encode(getImageCaptions($captionsPath)) ?>;
-        var index = 0;
+        var index = <?php echo json_encode(getIndex()); ?>;
+
+        console.log(index);
         var clickCount = 0;
         var captionWithoutImage = "";
         var captionWithImage = "";
@@ -73,7 +75,7 @@ if(!isset($_SESSION['OutFileName'])){
                 temp1 = captionWithoutImage;
                 temp2 = captionWithImage;
 
-                var data = {annotaions: temp1+ "," +temp2,caption: caption};
+                var data = {annotaions: temp1+ "," +temp2,caption: caption,index:index};
                 send_data(data);
             }
             if (clickCount == 1) {
