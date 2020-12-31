@@ -75,7 +75,7 @@ if(!isset($_SESSION['OutFileName'])){
                 temp1 = captionWithoutImage;
                 temp2 = captionWithImage;
 
-                var data = {annotaions: temp1+ "," +temp2,caption: caption,index:index};
+                var data = {annotaions: temp1+ "\t" +temp2,caption: caption,index:index};
                 send_data(data);
             }
             if (clickCount == 1) {
