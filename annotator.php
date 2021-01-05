@@ -1,7 +1,7 @@
 <?php
 session_start();
-$imagePath = "DIDEC/images";
-$captionsPath = "DIDEC/captions";
+$imagePath = "Data/images";
+$captionsPath = "Data/captions";
 $name = $_GET['inputName'];
 $outFileName = $name . time() . 'tsv';
 if(!isset($_SESSION['OutFileName'])){
@@ -65,7 +65,7 @@ if(!isset($_SESSION['OutFileName'])){
                 document.getElementById("captionCardText").innerText = captions[index];
                 document.getElementById('captionWithImage').style.display = 'none';
                 document.getElementById('captionImageCardText').innerText = captions[index];
-                document.getElementById('Image').src = 'DIDEC/images/' + filenames[index] + '.jpg'
+                document.getElementById('Image').src = 'Data/images/' + filenames[index] + '.jpg'
 
                 captionWithImage = document.getElementById("inputAnnotate").value;
                 document.getElementById("inputAnnotate").value = "";
@@ -90,7 +90,7 @@ if(!isset($_SESSION['OutFileName'])){
             document.getElementById("captionCardText").innerText = captions[index];
             document.getElementById('captionWithImage').style.display = 'none';
             document.getElementById('captionImageCardText').innerText = captions[index];
-            document.getElementById('Image').src = 'DIDEC/images/' + filenames[index] + '.jpg'
+            document.getElementById('Image').src = 'Data/images/' + filenames[index] + '.jpg'
         };
     </script>
 
@@ -102,8 +102,8 @@ if(!isset($_SESSION['OutFileName'])){
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h2 class="text-center">Project Neurem-3 at the Institute of Formal and Applied Linguistics</h2>
-                    <h4 class="text-center">Faculty of Mathematics and Physics, Charles University</h4>
+                <h2 class="text-center">Ambiguity Annotation for Eye-Tracking Experiments</h2>
+                <h4 class="text-center">UFAL, Faculty of Mathematics and Physics, Charles University</h4>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@ if(!isset($_SESSION['OutFileName'])){
                                 <div class="card" style="width: 60%; margin-left:auto; margin-right:auto;">
                                     <div class="card-header card-header-text card-header-primary">
                                         <div class="card-text">
-                                            <h4 class="card-title">Annotations</h4>
+                                            <h4 class="card-title">Annotation</h4>
                                         </div>
                                     </div>
 
@@ -162,8 +162,8 @@ if(!isset($_SESSION['OutFileName'])){
                                         <form action="annotator.php" method="GET">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputAnnotate">Please Enter the annotations:</label>
-                                                    <input type="text" class="form-control" id="inputAnnotate" name="inputAnnotate" placeholder="Annotations">
+                                                    <label for="inputAnnotate">Please enter the annotation:</label>
+                                                    <input type="text" class="form-control" id="inputAnnotate" name="inputAnnotate" placeholder="Annotation">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <button type="button" class="btn btn-primary" style="margin-top: 9%; margin-left:20%;" onclick="loadCaptionsAndImages()">Submit</button>

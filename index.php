@@ -25,8 +25,8 @@ session_start()
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h2 class="text-center">Project Neurem-3 at the Institute of Formal and Applied Linguistics</h2>
-          <h4 class="text-center">Faculty of Mathematics and Physics, Charles University</h4>
+          <h2 class="text-center">Ambiguity Annotation for Eye-Tracking Experiments</h2>
+          <h4 class="text-center">UFAL, Faculty of Mathematics and Physics, Charles University</h4>
         </div>
       </div>
     </div>
@@ -44,25 +44,27 @@ session_start()
             </div>
           </div>
           <div class="card-body" style="text-align: justify;">
-            From the inception of the Apache project in 1995 the official documentation stated:[16][17]
-
-            Apache is a cute name which stuck. It was based on some existing code and a series of software patches, a pun on “A PAtCHy” server.
-
-            In an April 2000 interview, Brian Behlendorf, one of the creators of Apache said:[18]
-
-            The name literally came out of the blue. I wish I could say that it was something fantastic, but it was out of the blue. I put it on a page and then a few months later when this project started, I pointed people to this page and said: "Hey, what do you think of that idea?" ... Someone said they liked the name and that it was a really good pun. And I was like, "A pun? What do you mean?" He said, "Well, we're building a server out of a bunch of software patches, right? So it's a patchy Web server." I went, "Oh, all right." ... When I thought of the name, no. It just sort of connotated: "Take no prisoners. Be kind of aggressive and kick some ass."
-
-            Since 2013 the Apache Foundation has explained the origin of the name as:[19]
-
-            The name 'Apache' was chosen from respect for the various Native American nations collectively referred to as Apache, well-known for their superior skills in warfare strategy and their inexhaustible endurance. It also makes a cute pun on "a patchy web server"—a server made from a series of patches—but this was not its origin. The group of developers who released this new software soon started to call themselves the "Apache Group".
-
-            When Apache is running under Unix, its process name is httpd, which is short for "HTTP daemon".[20]
-
-            Feature overview
-            Apache supports a variety of features, many implemented as compiled modules which extend the core functionality. These can range from authentication schemes to supporting server-side programming languages such as Perl, Python, Tcl and PHP. Popular authentication modules include mod_access, mod_auth, mod_digest, and mod_auth_digest, the successor to mod_digest. A sample of other features include Secure Sockets Layer and Transport Layer Security support (mod_ssl), a proxy module (mod_proxy), a URL rewriting module (mod_rewrite), custom log files (mod_log_config), and filtering support (mod_include and mod_ext_filter).
-
-            Popular compression methods on Apache include the external extension module, mod_gzip, implemented to help with reduction of the size (weight) of web pages served over HTTP. ModSecurity is an open source intrusion detection and prevention engine for Web applications. Apache logs can be analyzed through a Web browser using free scripts, such as AWStats/W3Perl or Visitors.
-
+          <p style="text-align: justified"> <br/><br/> Thank you for helping out in this annotation task! <br/><br/><br/><br/>
+        As part of this task, you will be shown a number of English sentences and you have to determine if there is any 
+        ambiguity in the presented sentence.<br/><br/>Once the task begins, you will first be presented with the <b>text</b> of an English 
+        sentence. Then, along with the same text, you will also be presented with an <b>image</b> corresponding to the sentence. 
+        <br/><br/><b>For each case (with and without the image), you are required to annotate the ambiguous words in the sentence.</b><br/><br/>
+        As an example, for a sentence like <i>"fine thin red hair"</i>, the word <i>'hair'</i> might mean <u>"vlas"</u> or 
+        <u>"chlup"</u>. <br/><br/>You are thus required to 
+        spot ambiguities like these and note them down in Czech.<br/><br/><br/>When you spot ambiguituies 
+        like these, you are required to annotate them in the text-box in the following format :<br/><br/>
+        <i>word_in_english: ambiguous_meaning1, ambiguous_meaning2, ambiguous_meaning3, ... <span style="color:red;text-align: left">;</span> <br/>
+        hair:vlas,chlup <span style="color:red;text-align: left">;</span> </i><br/><br/>
+        If there are <b>more than one ambiguous word</b> in the sentence, enter the word in the same format right after
+        the semicolon like this: <br/><br/>
+        <i>word1_in_english: ambiguous_meaning1, ambiguous_meaning2, ambiguous_meaning3, ... <span style="color:red;text-align: left">;</span>
+            word2in_english: ambiguous_meaning1, ambiguous_meaning2, ambiguous_meaning3, ... <span style="color:red;text-align: left">;</span> </i><br/><br/>
+        If there are no ambiguous words, please leave the field blank!
+        <br/><br/><br/><br/>
+        If there are any  confusions with the instructions, please write to bhattacharya@ufal.mff.cuni.cz
+        <br/><br/>    
+        </p>
+        
 
           </div>
         </div>
